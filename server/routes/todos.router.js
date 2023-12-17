@@ -13,5 +13,21 @@ router.get('/', (req, res) => {
         })
 })
 
+router.post('/', (req, res) => {
+    let queryText = `
+    INSERT INTO "todos" ("text")
+    VALUES
+    ($1);
+    `
+    //console.log(req.body);
+    pool.query(queryText, [req.body.text])
+        .then((result) => {
+            res.sendStatus(201)
+        }).catch((error) => {
+            console.log(error);
+        })
+    
+})
+
 
 module.exports = router;

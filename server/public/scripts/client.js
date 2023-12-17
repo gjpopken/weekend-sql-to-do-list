@@ -42,7 +42,20 @@ function render() {
 
 function handleSubmit(event) {
     event.preventDefault()
-    
+    //console.log('add task was clicked');
+    const taskToAdd = document.getElementById('toDoTextInput').value
+
+    axios({
+        method: 'POST',
+        url: '/todos',
+        data: {
+            text: taskToAdd
+        }
+    }).then((response) => {
+        console.log('posted new task!');
+        document.getElementById('toDoTextInput').value = ''
+        render()
+    })
 }
 
 onStart()
