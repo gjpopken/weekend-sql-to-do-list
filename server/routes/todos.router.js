@@ -44,5 +44,17 @@ router.put('/:id', (req, res) => {
         })
 })
 
+router.delete('/:id', (req, res) => {
+    let queryText = `
+    DELETE FROM "todos" WHERE "id" = $1
+    `
+    pool.query(queryText, [req.params.id])
+        .then((result) => {
+            res.sendStatus(201)
+        }).catch((error) => {
+            console.log(error);
+        })
+})
+
 
 module.exports = router;

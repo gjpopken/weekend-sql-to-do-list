@@ -3,18 +3,6 @@ function onStart() {
     render()
 }
 
-// let sampleTasks = [
-//     {
-//         text: 'something',
-//         isComplete: false
-//     },
-//     {
-//         text: 'something else',
-//         isComplete: true
-//     }
-// ]
-
-
 function render() {
     axios({
         method: 'GET',
@@ -26,7 +14,7 @@ function render() {
         for (task of tasksList) {
             nInnerHTML += `
             <tr data-testid="toDoItem">
-                <td>${task.text}</td> <td><button data-testid="deleteButton">X</button></td>
+                <td>${task.text}</td> <td><button data-testid="deleteButton" onclick="handleDelete(${task.id})">X</button></td>
             `
             if (task.isComplete === false) {
                 nInnerHTML += `<td><button onclick="handleUpdate(${task.id})">Done!</button></td></tr>`
@@ -67,6 +55,20 @@ function handleUpdate(id) {
         url: `/todos/${id}`
     }).then((response) => {
         console.log("updated task!");
+        render()
+    }).catch((error) => {
+        console.log(error);
+    })
+}
+
+function handleDelete(id) {
+    // console.log('delete task clicked', id);
+
+    axios ({
+        method: "DELETE",
+        url: `/todos/${id}`
+    }).then((response) => {
+        console.log('successfully deleted');
         render()
     }).catch((error) => {
         console.log(error);
