@@ -27,7 +27,7 @@ A button that will cause the item to delete from the table and from the DB
 [x] Server: POST route that queries to insert the new task to the DB
 [x] Client: PUT request that will fire when we click to mark as complete or incomplete.
 [x] Server: PUT route that will SELECT for the current status of complete, and toggle it to be the opposite
-[ ] Client: CSS styling!!
+[x] Client: CSS styling!!
 
 ## Testing Requirements
 - each new task needs to have `data-testid="toDoItem"`
