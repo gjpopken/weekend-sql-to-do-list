@@ -23,10 +23,10 @@ A button that will cause the item to delete from the table and from the DB
 [x] Client: create a render function that will GET the tasks from the database (organzized by if they are complete or not)
     The script must render a delete button, and a button to either mark as complete or unmark as uncomplete
 [x] Server: GET endpoint that queries the DB for a SELECT * FROM "" ORDER BY "isComplete"
-[ ] Client: a function to handle the click to add a new task to the DB. This is a POST request to send an object to the DB
-[ ] Server: POST route that queries to insert the new task to the DB
-[ ] Client: PUT request that will fire when we click to mark as complete or incomplete.
-[ ] Server: PUT route that will SELECT for the current status of complete, and toggle it to be the opposite
+[x] Client: a function to handle the click to add a new task to the DB. This is a POST request to send an object to the DB
+[x] Server: POST route that queries to insert the new task to the DB
+[x] Client: PUT request that will fire when we click to mark as complete or incomplete.
+[x] Server: PUT route that will SELECT for the current status of complete, and toggle it to be the opposite
 [ ] Client: CSS styling!!
 
 ## Testing Requirements
