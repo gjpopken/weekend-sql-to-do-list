@@ -20,9 +20,9 @@ A button that will cause the item to delete from the table and from the DB
 
 ## Tasks
 [x] Client: index.html file with a field to input text, which is the todo item
-[ ] Client: create a render function that will GET the tasks from the database (organzized by if they are complete or not)
+[x] Client: create a render function that will GET the tasks from the database (organzized by if they are complete or not)
     The script must render a delete button, and a button to either mark as complete or unmark as uncomplete
-[ ] Server: GET endpoint that queries the DB for a SELECT * FROM "" ORDER BY "isComplete"
+[x] Server: GET endpoint that queries the DB for a SELECT * FROM "" ORDER BY "isComplete"
 [ ] Client: a function to handle the click to add a new task to the DB. This is a POST request to send an object to the DB
 [ ] Server: POST route that queries to insert the new task to the DB
 [ ] Client: PUT request that will fire when we click to mark as complete or incomplete.

@@ -22,10 +22,11 @@ function render() {
     }).then((response) => {
         let tasksList = response.data
         const container = document.getElementById('container')
-        for (task of tasksList) {
-            let nInnerHTML = `
-            <tr>
-                <td>${task.text} <button>Delete</button>
+        let nInnerHTML = ''
+        for (task of tasksList) { // TODO change the interpolation to put the buttons in their own td's
+            nInnerHTML += `
+            <tr data-testid="toDoItem">
+                <td>${task.text} <button data-testid="deleteButton">Delete</button>
             `
             if (task.isComplete === false) {
                 nInnerHTML += `<button>Done!</button></td></tr>`
@@ -34,7 +35,14 @@ function render() {
             }
         }
         container.innerHTML = nInnerHTML
+    }).catch((error) => {
+        console.log(error);
     })
+}
+
+function handleSubmit(event) {
+    event.preventDefault()
+    
 }
 
 onStart()
