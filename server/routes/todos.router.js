@@ -29,5 +29,20 @@ router.post('/', (req, res) => {
     
 })
 
+router.put('/:id', (req, res) => {
+    let queryText = `
+    UPDATE "todos" SET "isComplete" = TRUE
+    WHERE "id" = $1
+    `
+    pool.query(queryText, [req.params.id])
+        .then((result) => {
+            console.log('updated task');
+            res.sendStatus(200)
+        }).catch((error) => {
+            console.log(error);
+            res.sendStatus(500)
+        })
+})
+
 
 module.exports = router;

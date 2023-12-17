@@ -23,15 +23,15 @@ function render() {
         let tasksList = response.data
         const container = document.getElementById('container')
         let nInnerHTML = ''
-        for (task of tasksList) { // TODO change the interpolation to put the buttons in their own td's
+        for (task of tasksList) {
             nInnerHTML += `
             <tr data-testid="toDoItem">
-                <td>${task.text} <button data-testid="deleteButton">Delete</button>
+                <td>${task.text}</td> <td><button data-testid="deleteButton">X</button></td>
             `
             if (task.isComplete === false) {
-                nInnerHTML += `<button>Done!</button></td></tr>`
+                nInnerHTML += `<td><button onclick="handleUpdate(${task.id})">Done!</button></td></tr>`
             } else {
-                nInnerHTML += `</td></tr>`
+                nInnerHTML += `</tr>`
             }
         }
         container.innerHTML = nInnerHTML
@@ -55,6 +55,21 @@ function handleSubmit(event) {
         console.log('posted new task!');
         document.getElementById('toDoTextInput').value = ''
         render()
+    }).catch((error) => {
+        console.log(error);
+    })
+}
+
+function handleUpdate(id) {
+    // console.log('hand update clicked', id);
+    axios ({
+        method: "PUT",
+        url: `/todos/${id}`
+    }).then((response) => {
+        console.log("updated task!");
+        render()
+    }).catch((error) => {
+        console.log(error);
     })
 }
 
