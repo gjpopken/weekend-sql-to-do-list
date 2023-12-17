@@ -23,16 +23,16 @@ function render() {
             // }
             if (task.isComplete === false) {
                 nInnerHTML += `
-                <tr data-testid="toDoItem">
+                <tr data-testid="toDoItem" class="table-striped">
                     <td class="task">${task.text}</td>
-                    <td>
+                    <td class="small-cell">
                         <button class="delete-button" 
                                 data-testid="deleteButton" 
                                 onclick="handleDelete(${task.id})">
                                 X
                         </button>
                     </td>
-                    <td>
+                    <td class="small-cell">
                         <button 
                             class="complete-button" 
                             data-testid="completeButton" 
@@ -44,9 +44,9 @@ function render() {
                 `
             } else {
                 nInnerHTML += `
-                <tr data-testid="toDoItem" class="completed">
+                <tr data-testid="toDoItem" class="completed table-striped">
                     <td class="task">${task.text}</td>
-                    <td>
+                    <td class="small-cell">
                         <button 
                             class="delete-button" 
                             data-testid="deleteButton" 
