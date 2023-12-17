@@ -19,7 +19,6 @@ router.post('/', (req, res) => {
     VALUES
     ($1);
     `
-    //console.log(req.body);
     pool.query(queryText, [req.body.text])
         .then((result) => {
             res.sendStatus(201)
@@ -36,7 +35,6 @@ router.put('/:id', (req, res) => {
     `
     pool.query(queryText, [req.params.id])
         .then((result) => {
-            console.log('updated task');
             res.sendStatus(200)
         }).catch((error) => {
             console.log(error);

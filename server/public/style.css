@@ -1,26 +1,11 @@
-/* * {
-    border: 1px solid black;
-} */
-
-/* body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-} */
-
-/* table {
-    margin-top: 50px;
-} */
-
 .task {
     width: 300px;
     word-wrap: break-word;
     padding-left: 15px;
 }
-/* 
-tr {
-    background-color: bisque;
-} */
 
-.delete-button, .complete-button {
+.delete-button,
+.complete-button {
     background: none;
     border: none;
 }
@@ -32,6 +17,7 @@ tr {
 .complete-button:hover {
     background-color: green;
 }
+
 .small-cell {
     width: 50px;
 }
