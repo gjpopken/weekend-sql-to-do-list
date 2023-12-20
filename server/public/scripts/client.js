@@ -1,5 +1,4 @@
 function onStart() {
-    console.log('client is working');
     render()
 }
 
@@ -67,7 +66,6 @@ function handleSubmit(event) {
             text: taskToAdd
         }
     }).then((response) => {
-        console.log('posted new task!');
         document.getElementById('toDoTextInput').value = ''
         render()
     }).catch((error) => {
@@ -91,7 +89,6 @@ function handleDelete(id) {
         method: "DELETE",
         url: `/todos/${id}`
     }).then((response) => {
-        console.log('successfully deleted');
         render()
     }).catch((error) => {
         console.log(error);
