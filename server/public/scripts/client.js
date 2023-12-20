@@ -15,17 +15,17 @@ function render() {
             if (task.isComplete === false) {
                 nInnerHTML += `
                 <tr data-testid="toDoItem" class="table-striped">
-                    <td class="task">${task.text}</td>
-                    <td class="small-cell">
-                        <button class="delete-button" 
+                    <td class="task col-3">${task.text}</td>
+                    <td class="small-cell col-1">
+                        <button class="delete-button btn btn-danger" 
                                 data-testid="deleteButton" 
                                 onclick="handleDelete(${task.id})">
                                 X
                         </button>
                     </td>
-                    <td class="small-cell">
+                    <td class="small-cell col-2">
                         <button 
-                            class="complete-button" 
+                            class="complete-button btn btn-success" 
                             data-testid="completeButton" 
                             onclick="handleUpdate(event, ${task.id})">
                             Done!
@@ -36,15 +36,16 @@ function render() {
             } else {
                 nInnerHTML += `
                 <tr data-testid="toDoItem" class="completed table-striped">
-                    <td class="task">${task.text}</td>
-                    <td class="small-cell">
+                    <td class="task col-3"><s>${task.text}<s></td>
+                    <td class="small-cell col-1">
                         <button 
-                            class="delete-button" 
+                            class="delete-button btn btn-danger" 
                             data-testid="deleteButton" 
                             onclick="handleDelete(${task.id})">
                             X
                         </button>
                     </td>
+                    <td></td>
                 </tr>
                 `
             }

@@ -15,22 +15,35 @@
 
 <body>
   <header>
-    <h1>SQL TO-DO List</h1>
+    <div class="container"><h1>SQL TO-DO List</h1></div>
+    
   </header>
   <main>
-    <form onsubmit="handleSubmit(event)">
-      <input type="text" name="toDoTextInput" id="toDoTextInput" data-testid="toDoTextInput" required>
-      <button type="submit" data-testid="submitButton">Add Task</button>
-    </form>
-    <table class="table table-striped">
-      <thead>
-        <th>Task</th>
-        <th></th>
-      </thead>
-      <tbody id="container">
-
-      </tbody>
-    </table>
+    <div class="container">
+      <form onsubmit="handleSubmit(event)" class="form-inline">
+        <div class="form-group mb-2"> 
+          <input type="text" 
+                  name="toDoTextInput" 
+                  id="toDoTextInput" 
+                  data-testid="toDoTextInput" 
+                  required 
+                  class="form-control"
+                  placeholder="Drink Water">
+        </div>
+       
+        <button type="submit" data-testid="submitButton" class="btn btn-primary mb-2">Add Task</button>
+      </form>
+      <table class="table table-striped">
+        <thead>
+          <th>Task</th>
+          <th></th>
+        </thead>
+        <tbody id="container">
+  
+        </tbody>
+      </table>
+    </div>
+   
   </main>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
